@@ -217,15 +217,13 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TriwerToken is StandardToken {
+    string public constant name = "Triwer";
+    string public constant symbol = "TRW";
+    uint public constant decimals = 18;
 
-  function TriwerToken() {
-    name = "Triwer";
-    symbol = "TRW";
-    decimals = 18;
-    totalSupply = 1e9 * 10**decimals; // 1 billion tokens
-
-    // Allocate initial balance to the owner
-    balances[msg.sender] = totalSupply;
-  }
+    function TriwerToken() {
+        totalSupply_ = 1e9 * 10**decimals; // 1 billion tokens
+        balances[msg.sender] = totalSupply_;
+    }
 
 }
